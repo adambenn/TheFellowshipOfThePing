@@ -6,6 +6,7 @@ import java.awt.Point;
 public class Graph {
 	private GraphEntry[][] adjList;
 	private int width, height;
+	private List<Point> turrets;
 	
 	Graph(Gameboard board){
 		this.adjList = new GraphEntry[board.getWidth()][board.getHeight()];
@@ -54,6 +55,10 @@ public class Graph {
 					adjList[i][j] = new GraphEntry(node);
 				}
 			}
+		}
+		
+		for (int i = 0; i < board.getTurrets().size(); i++) {
+			turrets.add(new Point(board.getTurrets()[i].x, board.getTurrets()[i].y));
 		}
 	}
 }

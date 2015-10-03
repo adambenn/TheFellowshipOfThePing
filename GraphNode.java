@@ -18,6 +18,5 @@ public class GraphNode {
 	
 	GraphNode(Point p) {
 		point = p;
-	}
-	
+	}	
 }
