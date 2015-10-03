@@ -12,4 +12,7 @@ public class GraphNode {
 			return false;
 		}
 	}
+	
+	GraphNode() {}
+	
 }
