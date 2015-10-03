@@ -5,8 +5,8 @@ import java.awt.Point;
 public class Graph {
 	GraphEntry[][] adjList;
 	
-	Graph(int width, int height){
-		this.adjList = new GraphEntry[width][height];
+	Graph(Gameboard board){
+		this.adjList = new GraphEntry[board.getWidth()][board.getHeight()];
 	}
 }
 
