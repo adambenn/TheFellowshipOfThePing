@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 import java.awt.Point;
 
 public class Graph {
@@ -12,19 +11,6 @@ public class Graph {
 	public void build(){
 		
 	}
-}
+	
 
-class GraphEntry{
-	GraphNode node;
-	List<Point> adjacent;
-	
-	GraphEntry(GraphNode node){
-		this.node = node;
-		this.adjacent = new ArrayList<Point>();
-	}
-	
-	GraphEntry(GraphNode node, List<Point> adjacent){
-		this.node = node;
-		this.adjacent = adjacent;
-	}
 }
