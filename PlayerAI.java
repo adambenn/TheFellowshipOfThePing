@@ -19,6 +19,7 @@ public class PlayerAI extends ClientAI {
 
 public void refreshDanger(Gameboard gameboard, Opponent opponent, Player player) {
 	int currentTurn = gameboard.getCurrentTurnNumber();
+	// First, mark tiles dangerous next to turrets
 	for (int i = 0; i < graph.turrets.size(); i++) {
 		// Turrets are points, look for a cross of size
 		// 4 around turrets and mark as dangerous
@@ -74,7 +75,7 @@ public void refreshDanger(Gameboard gameboard, Opponent opponent, Player player)
 				graph.adjList[turret_x][graph.height - j].node.setDangerous(currentTurn);
 			}
 			else {
-				if (gameboard.isWallAtTile(turret_x, turret_y - j)) {
+				if (gameboard.isWallAtTile(turret_x, turret_y - j	)) {
 					break;
 				}
 				graph.adjList[turret_x][turret_y - j].node.setDangerous(currentTurn);
