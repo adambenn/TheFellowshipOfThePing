@@ -46,12 +46,12 @@ public class Graph {
 							newAdj.add(new Point(i, 0));
 						}
 					}
-					GraphNode node = new GraphNode();
-					adjList[i][j] = GraphEntry(node, newAdj);
+					GraphNode node = new GraphNode(new Point(i, j));
+					adjList[i][j] = new GraphEntry(node, newAdj);
 				}
 				else {
-					GraphNode node = new GraphNode();
-					adjList[i][j] = GraphEntry(node);
+					GraphNode node = new GraphNode(new Point(i, j));
+					adjList[i][j] = new GraphEntry(node);
 				}
 			}
 		}
