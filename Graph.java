@@ -8,6 +8,10 @@ public class Graph {
 	Graph(Gameboard board){
 		this.adjList = new GraphEntry[board.getWidth()][board.getHeight()];
 	}
+	
+	public void build(){
+		
+	}
 }
 
 class GraphEntry{
