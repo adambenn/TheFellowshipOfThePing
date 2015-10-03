@@ -1,4 +1,7 @@
+import java.awt.Point;
+
 public class GraphNode {
+	public Point point;
 	private int lastSet = 0; // Turn that dangerous was last set
 	
 	public void setDangerous(int currentTurn){
@@ -6,13 +9,14 @@ public class GraphNode {
 	}
 	
 	public boolean isDangerous(int currentTurn){
-		if( currentTurn == lastSet){
+		if(currentTurn == lastSet){
 			return true;
 		}else{
 			return false;
 		}
 	}
 	
-	GraphNode() {}
-	
+	GraphNode(Point p) {
+		point = p;
+	}	
 }
