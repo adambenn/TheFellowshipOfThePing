@@ -6,11 +6,13 @@ import java.awt.Point;
 public class Graph {
 	private GraphEntry[][] adjList;
 	private int width, height;
+	private List<Point> turrets;
 	
 	Graph(Gameboard board){
 		this.adjList = new GraphEntry[board.getWidth()][board.getHeight()];
 		this.width = board.getWidth();
 		this.height = board.getHeight();
+		this.turrets = new ArrayList<Point>();
 	}
 	
 	public void build(){
@@ -20,6 +22,7 @@ public class Graph {
 	public void build(Gameboard board){
 		for (int i = 0; i < this.width; i++) {
 			for (int j = 0; j < this.height; j++) {
+				
 				if (!board.isTurretAtTile(i, j) && !board.isWallAtTile(i, j)) {
 					List<Point> newAdj;
 					// Check the edges of the map, perform wraparound
@@ -57,6 +60,10 @@ public class Graph {
 					adjList[i][j] = new GraphEntry(node);
 				}
 			}
+		}
+		
+		for (int i = 0; i < board.getTurrets().size(); i++) {
+			turrets.add(new Point(board.getTurrets()[i].x, board.getTurrets()[i].y));
 		}
 	}
 	
